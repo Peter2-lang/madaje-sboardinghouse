@@ -286,8 +286,8 @@ function App() {
   const [propertyProfile, setPropertyProfile] = useState<PropertyProfile>({
     name: "Madaje's Boarding House",
     owner: "Roberto Madaje Jr.",
-    address: "Riverside Street, Barangay Mabini",
-    manager: "Mariel Daje",
+    address: "San Pedro Street, Barangay Poblacion",
+    manager: "Roberto Madaje Jr.",
     phone: "0918 234 8899",
     notes: "Quiet, clean, and close to school routes.",
   });
