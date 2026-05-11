@@ -1,21 +1,9 @@
 import express from "express";
+import cors from "cors";
 import mysql from "mysql2/promise";
-import path from "path";
-import { fileURLToPath } from "url";
+import dotenv from "dotenv";
 
-const express = require('express');
-const { Pool } = require('pg');
-const cors = require('cors');
-require('dotenv').config();
-
-const app = express();
-app.use(cors());
-app.use(express.json());
-
-require("dotenv").config();
-const express = require("express");
-const cors = require("cors");
-const mysql = require("mysql2/promise");
+dotenv.config();
 
 const app = express();
 app.use(cors());
@@ -29,6 +17,12 @@ const pool = mysql.createPool({
   database: process.env.DB_NAME,
   ssl: { rejectUnauthorized: false }
 });
+
+app.listen(process.env.PORT || 10000, () => {
+  console.log("✅ Server running");
+});
+
+
 
 app.get("/", (req, res) => {
   res.send("Server is running ✅");
